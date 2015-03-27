@@ -1,0 +1,30 @@
+{
+  "globals": {
+    "angular": true,
+    "console": true,
+    "module": true,
+    "exports": true,
+    "require": true,
+    "process": true,
+    "Buffer": true
+  },
+  "asi": true,
+  "lastsemic": true,
+  "strict": false,
+  "bitwise": false,
+  "camelcase": true,
+  "eqeqeq": true,
+  "freeze": true,
+  "immed": true,
+  "indent": 2,
+  "latedef": true,
+  "maxlen": 300,
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonbsp": true,
+  "nonew": true,
+  "quotmark": "single",
+  "trailing": true,
+  "undef": true
+}
