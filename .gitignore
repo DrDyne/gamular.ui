@@ -1,0 +1,13 @@
+.DS_Store
+.nodemonignore
+/build/
+*.tap
+/dist/
+npm-debug.log
+node_modules/
+app/bower_components
+app/scripts/templates.js
+reports/
+.bower-*/
+.idea/
+*~
