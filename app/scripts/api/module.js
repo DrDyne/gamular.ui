@@ -1,4 +1,4 @@
-angular.module('gamular.api', ['gamular.api.resources'])
+angular.module('gamular.api', ['gamular'])
 .run([
   'player',
   'monster',

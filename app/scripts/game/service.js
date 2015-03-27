@@ -3,7 +3,7 @@ angular.module('gamular.game')
   var service = this;
 
   service.createPlayer = function () {
-    return api.players.create({
+    return api.players.save({
       life: 5,
       power: 2,
       defense: 1,
@@ -13,7 +13,7 @@ angular.module('gamular.game')
   };
 
   service.createMonster = function () {
-    return api.monsters.create({
+    return api.monsters.save({
       life: 5,
       power: 1,
       defense: 0,

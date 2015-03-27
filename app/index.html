@@ -27,21 +27,23 @@
   <![endif]-->
 </head>
 
-<body ng-app="gamular" class="ng-cloak" ng-controller="AppCtrl">
+<body ng-app="gamular" class="ng-cloak" ng-controller="AppCtrl as gamular">
 
-  <nav ng-if="session"
-       ng-include="'partials/header.html'"
-       class="navbar navbar-default navbar-fixed-top"
-       role="navigation">
+  <nav ng-include="'partials/nav.html'" class="navbar navbar-default navbar-fixed-top" role="navigation">
   </nav>
 
   <div class="background-blur"></div>
 
   <section>
 
-		<div ng-view id="content" class="transition-fade" autoscroll="true">
-		  hay
-		</div>
+    <div id="content" class="transition-fade" autoscroll="true">
+      <div class="container">
+        <h1 ng-bind="gamular.name"></h1>
+        <section ng-include="'partials/map.html'" class="map"></section>
+        <section ng-include="'partials/controls.html'" class="controls">
+        </section>
+      </div>
+    </div>
 
   </section>
 
@@ -70,12 +72,13 @@
   <script src="scripts/game/factory.js"></script>
   <script src="scripts/game/controller.js"></script>
 
-  <script src="scripts/api/module.js"></script>
-  <script src="scripts/api/service.js"></script>
-
   <script src="scripts/api/resources/module.js"></script>
   <script src="scripts/api/resources/player.js"></script>
   <script src="scripts/api/resources/monster.js"></script>
+
+  <script src="scripts/api/module.js"></script>
+  <script src="scripts/api/service.js"></script>
+
 
   <!-- endbuild -->
 

@@ -1,1 +1,1 @@
-angular.module('gamular.api.resources', []);
+angular.module('gamular.api.resources', ['gamular.api']);

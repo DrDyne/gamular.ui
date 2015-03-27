@@ -5,7 +5,7 @@
   },
   "proxy": {
 		"host": "localhost",
-    "port": 1318
+    "port": 1337
   }
 }
 
