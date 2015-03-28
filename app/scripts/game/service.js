@@ -1,24 +1,36 @@
 angular.module('gamular.game')
-.service('game', ['api', function (api) {
+.service('game', [
+  '$rootScope',
+  'api',
+function ($rootScope, api) {
   var service = this;
 
-  service.createPlayer = function () {
-    return api.players.save({
+  service.createPlayer = function (name) {
+    $rootScope.player = new api.players({
+      name: name,
       life: 5,
       power: 2,
       defense: 1,
-      posX: 2,
-      posY: 2,
-    }).$promise
+      posX: 1,
+      posY: 1,
+    });
+
+    $rootScope.player.$save();
+
+    return $rootScope.player.$promise
   };
 
-  service.createMonster = function () {
-    return api.monsters.save({
-      life: 5,
+  service.createMonster = function (life) {
+    $rootScope.monster = new api.monsters({
+      life: life,
       power: 1,
       defense: 0,
       posX: 4,
       posY: 5,
-    }).$promise
+    })
+
+    $rootScope.monster.$save();
+
+    return $rootScope.monster.$promise;
   }
 }])

@@ -1,3 +1,6 @@
-<div>
-  map goes here
+<div class="tiles container">
+  <div ng-repeat="row in [0,1,2,3,4,5]" class="row">
+    <div ng-repeat="col in [0,1,2,3,4,5]" ng-class="['x-'+row, 'y-'+col]" class="col-md-2 tile">
+    </div>
+  </div>
 </div>

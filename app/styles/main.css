@@ -1,3 +1,43 @@
 body {
   padding-top: 50px;
 }
+.map {
+  float: left;
+}
+
+.controls {
+  float: left;
+}
+
+.map .tiles {
+  width: 300px;
+}
+
+.map .tile {
+  min-height: 50px;
+  border: 1px solid #ccc;
+}
+
+.directions,
+.actions {
+  float: left;
+}
+
+.directions > div {
+  height: 34px;
+}
+
+.directions .btn-center button {
+  display: block;
+  margin: 0 auto;
+}
+
+.actions {
+  display: inline-block;
+}
+
+.actions > div {
+  margin-left: 10px;
+  height: 34px;
+}
+

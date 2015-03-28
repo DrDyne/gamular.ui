@@ -4,6 +4,7 @@ angular.module('gamular', [
   'ngRoute',
   'ngAnimate',
   'ngMessages',
+  'ui.bootstrap',
                           
   'gamular.api',
   'gamular.api.resources',
@@ -15,23 +16,14 @@ angular.module('gamular', [
 }])
 
 .service('app', [
-  '$q',
   '$rootScope',
   '$log',
   'game',
-function ($q, $rootScope, $log, game) {
+function ($rootScope, $log, game) {
   var service = this;
 
   service.start = function () {
-    $q.all({
-      player: game.createPlayer(),
-      monster: game.createMonster(),
-    }, function (data) {
-      $rootScope.player = data.player;
-      $rootScope.monster = data.monster;
-
-      $log.log('Welcome to Gamular !');
-    });
+    $log.log('Welcome to Gamular !');
   };
 }])
 

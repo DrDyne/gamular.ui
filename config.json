@@ -4,7 +4,7 @@
     "port": 3001
   },
   "proxy": {
-		"host": "localhost",
+		"host": "10.0.0.9",
     "port": 1337
   }
 }

@@ -1,6 +1,7 @@
 angular.module('gamular.api.resources')
 .factory('player', ['$resource', 'api', function ($resource, api) {
   var resource = $resource('/api/players/:id', {
+    id: '@id',
   }, {
     moveUp: {
       method: 'PUT',

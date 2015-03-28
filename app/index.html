@@ -16,7 +16,7 @@
   <!-- build:css(app) styles/stylesheet.css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/angular-growl-2/build/angular-growl.css">
-  <link rel="stylesheet" href="styles/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles/animations.css">
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
@@ -29,8 +29,8 @@
 
 <body ng-app="gamular" class="ng-cloak" ng-controller="AppCtrl as gamular">
 
-  <nav ng-include="'partials/nav.html'" class="navbar navbar-default navbar-fixed-top" role="navigation">
-  </nav>
+  <ng-include src="'partials/nav.html'">
+  </ng-include>
 
   <div class="background-blur"></div>
 
@@ -39,8 +39,8 @@
     <div id="content" class="transition-fade" autoscroll="true">
       <div class="container">
         <h1 ng-bind="gamular.name"></h1>
-        <section ng-include="'partials/map.html'" class="map"></section>
-        <section ng-include="'partials/controls.html'" class="controls">
+        <section ng-include="'partials/map.html'" ng-if="player && monster" class="map"></section>
+        <section ng-include="'partials/controls.html'" ng-if="player" class="controls">
         </section>
       </div>
     </div>
@@ -61,24 +61,33 @@
   <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/angular-growl-2/build/angular-growl.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
   <!-- endbuild -->
 
   <!-- build:js(app) scripts/app.js -->
   <script src="scripts/app.js"></script>
   <script src="scripts/templates.js"></script>
 
+  <script src="scripts/directives/btn-attack/directive.js"></script>
+  <script src="scripts/directives/btn-move/directive.js"></script>
+
+  <script src="scripts/nav/controller.js"></script>
+  <script src="scripts/nav/create-player/service.js"></script>
+  <script src="scripts/nav/create-monster/service.js"></script>
+
   <script src="scripts/game/module.js"></script>
   <script src="scripts/game/service.js"></script>
-  <script src="scripts/game/factory.js"></script>
+  <script src="scripts/game/combat.factory.js"></script>
+  <script src="scripts/game/move.factory.js"></script>
   <script src="scripts/game/controller.js"></script>
-
-  <script src="scripts/api/resources/module.js"></script>
-  <script src="scripts/api/resources/player.js"></script>
-  <script src="scripts/api/resources/monster.js"></script>
 
   <script src="scripts/api/module.js"></script>
   <script src="scripts/api/service.js"></script>
 
+  <script src="scripts/api/resources/module.js"></script>
+  <script src="scripts/api/resources/player.js"></script>
+  <script src="scripts/api/resources/monster.js"></script>
 
   <!-- endbuild -->
 

@@ -1,0 +1,19 @@
+<div class="modal-header">
+  Monster life
+</div>
+
+<div class="modal-body">
+  <div class="form-group">
+    <input ng-model="monster.life" type="number" class="form-control" placeholder="Monster Life...">
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button ng-click="$dismiss()" type="button" class="btn btn-default">
+    Cancel
+  </button>
+
+  <button ng-click="$close(monster)" type="button" class="btn btn-primary">
+    Create
+  </button>
+</div>
