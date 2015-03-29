@@ -14,15 +14,19 @@ function (api, target, logger) {
 
     logger.tooFar(monster);
     return 0;
-  };
+  }
 
   factory.attack = function (player, monster) {
     target.lock(monster.posX, monster.posY);
 
     monster.life -= damageDealt(player, monster);
 
-    return monster.$save()
-    .finally(target.unlock)
+    return monster.$update()
+    .then(function (monster) {
+      target.unlock();
+      logger.attacked(monster);
+      return monster;
+    })
   };
 
   return factory

@@ -3,7 +3,7 @@ angular.module('gamular.api.resources')
   var resource = $resource('/api/monsters/:id', {
     id: '@id',
   }, {
-    takeDamage: {
+    update: {
       method: 'PUT',
     },
   });

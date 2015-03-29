@@ -7,7 +7,7 @@ function ($modal) {
   service.open = function () {
     var modalInstance = $modal.open({
       size: 'lg',
-      template: '<div class="modal-header"><h1>YOU WIN</h1></div>',
+      template: '<div class="modal-body text-center"><h1>YOU WIN</h1></div>',
     })
   }
 }]);
