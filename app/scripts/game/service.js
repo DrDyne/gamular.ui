@@ -9,7 +9,8 @@ function ($rootScope, api) {
     $rootScope.player = new api.players({
       name: name,
       life: 5,
-      power: 2,
+      maxLife: 5,
+      power: 1,
       defense: 1,
       posX: 1,
       posY: 1,
@@ -22,7 +23,9 @@ function ($rootScope, api) {
 
   service.createMonster = function (life) {
     $rootScope.monster = new api.monsters({
+      name: 'Boblin',
       life: life,
+      maxLife: life,
       power: 1,
       defense: 0,
       posX: 4,

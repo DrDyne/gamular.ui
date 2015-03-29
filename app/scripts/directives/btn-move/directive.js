@@ -1,5 +1,5 @@
 angular.module('gamular')
-.directive('btnMove', ['$log', 'MoveFactory', function ($log, MoveFactory) {
+.directive('btnMove', ['logger', 'MoveFactory', function (logger, MoveFactory) {
   return {
     scope: {
       player: '=',
@@ -14,10 +14,8 @@ angular.module('gamular')
       element.on('click', function () {
         MoveFactory[scope.direction](scope.player)
         .then(function () {
-          $log.log('moved', scope.direction);
-        }, function (err) {
-          $log.warn('could not move!', err.data.message);
-        });
+          logger.moved(scope.direction);
+        }, logger.couldNotMove);
       });
     }
   }

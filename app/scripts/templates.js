@@ -7,7 +7,7 @@ angular.module('gamular').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('partials/map.html',
-    "<div class=\"tiles container\"><div ng-repeat=\"row in [0,1,2,3,4,5]\" class=row><div ng-repeat=\"col in [0,1,2,3,4,5]\" ng-class=\"['x-'+row, 'y-'+col]\" class=\"col-md-2 tile\"></div></div></div>"
+    "<div ng-controller=\"mapCtrl as map\" class=\"tiles container\"><div ng-repeat=\"row in [0,1,2,3,4,5]\" class=row><div ng-repeat=\"col in [0,1,2,3,4,5]\" ng-class=\"['x-'+row, 'y-'+col]\" class=\"col-xs-2 tile\" ng-click=\"map.setTarget(col, row)\"></div></div></div><gu-sprite sprite=player model=player></gu-sprite><gu-sprite sprite=monster model=monster></gu-sprite>"
   );
 
 
@@ -17,12 +17,17 @@ angular.module('gamular').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('scripts/directives/btn-attack/template.html',
-    "<button attack type=button class=\"btn btn-primary\"><ng-transclude></ng-transclude></button>"
+    "<button ng-click=\"ctrl.attack(player, monster)\" type=button class=\"btn btn-primary\"><ng-transclude></ng-transclude></button>"
   );
 
 
   $templateCache.put('scripts/directives/btn-move/template.html',
     "<button type=button class=\"btn btn-default\"><ng-transclude></ng-transclude></button>"
+  );
+
+
+  $templateCache.put('scripts/directives/gu-sprite/template.html',
+    "<div class=\"sprite text-center\"><i ng-show=\"sprite === 'player'\" class=\"fa fa-2x fa-child\"></i> <i ng-show=\"sprite === 'monster'\" class=\"fa fa-2x fa-bug\"></i></div><progressbar value=model.life max=model.maxLife type=danger>{{model.life}} / {{model.maxLife}}</progressbar>"
   );
 
 

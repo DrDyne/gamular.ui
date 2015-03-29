@@ -1,0 +1,7 @@
+<div class="sprite text-center">
+  <i ng-show="sprite === 'player'" class="fa fa-2x fa-child"></i>
+  <i ng-show="sprite === 'monster'" class="fa fa-2x fa-bug"></i>
+</div>
+<progressbar value="model.life" max="model.maxLife" type="danger">
+  {{model.life}} / {{model.maxLife}}
+</progressbar> <!-- create a directive -->
