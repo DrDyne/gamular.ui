@@ -6,13 +6,18 @@ angular.module('gamular').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('partials/debug.html',
+    "<div class=player><pre>{{player | json}}</pre></div><div class=monster><pre>{{monster | json}}</pre></div>"
+  );
+
+
   $templateCache.put('partials/map.html',
     "<div ng-controller=\"mapCtrl as map\" class=\"tiles container\"><div ng-repeat=\"row in [0,1,2,3,4,5]\" class=row><div ng-repeat=\"col in [0,1,2,3,4,5]\" ng-class=\"['x-'+row, 'y-'+col]\" class=\"col-xs-2 tile\" ng-click=\"map.setTarget(col, row)\"></div></div></div><gu-sprite sprite=player model=player></gu-sprite><gu-sprite sprite=monster model=monster></gu-sprite>"
   );
 
 
   $templateCache.put('partials/nav.html',
-    "<nav ng-controller=\"navCtrl as nav\" class=\"navbar navbar-default navbar-fixed-top\" role=navigation><div class=container><div class=navbar-header><button type=button class=\"navbar-toggle collapsed\" data-toggle=collapse data-target=#navbar><span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span></button> <a class=navbar-brand href ng-click=homePage()><i class=\"fa fa-th-large fa-fw\"></i> {{gamular.name}}</a></div><div id=navbar class=\"pup-nav navbar-collapse collapse\"><ul class=\"nav navbar-nav\"><li><a href ng-click=nav.startGame()>Start game</a></li></ul><ul class=\"nav navbar-nav navbar-right\"><li class=\"dropdown nav-sep\"><a href class=dropdown-toggle data-toggle=dropdown>{{session.email}} <span class=caret></span></a><ul class=dropdown-menu role=menu><li class=disabled><a href=#/settings><i class=\"fa fa-ban fa-fw\"></i> Settings</a></li><li><a href=#/logout><i class=\"fa fa-sign-out fa-fw\"></i> Logout</a></li></ul></li></ul></div></div></nav>"
+    "<nav ng-controller=\"navCtrl as nav\" class=\"navbar navbar-default navbar-fixed-top\" role=navigation><div class=container><div class=navbar-header><button type=button class=\"navbar-toggle collapsed\" data-toggle=collapse data-target=#navbar><span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span></button> <a class=navbar-brand href ng-click=homePage()><i class=\"fa fa-th-large fa-fw\"></i> {{gamular.name}}</a></div><div id=navbar class=\"navbar-collapse collapse\"><ul class=\"nav navbar-nav\"><li><a href ng-click=nav.startGame()>Start game</a></li></ul></div></div></nav>"
   );
 
 

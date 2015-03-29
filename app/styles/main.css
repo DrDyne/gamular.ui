@@ -8,6 +8,13 @@ body {
 
 .controls {
   float: left;
+  margin-left: 20px;
+}
+
+.debug {
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .map .tiles {

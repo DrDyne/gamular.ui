@@ -11,12 +11,10 @@ angular.module('gamular')
       element.addClass('gu-sprite');
 
       scope.$watch('model.posX', function (value) {
-        console.log('posX', scope.model.name, value);
         element.css('margin-left', scope.model.posX * dimensions.tile);
       });
 
       scope.$watch('model.posY', function (value) {
-        console.log('posY', scope.model.name, value);
         element.css('margin-top', scope.model.posY * dimensions.tile);
       });
     }

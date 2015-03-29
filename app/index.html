@@ -40,8 +40,8 @@
       <div class="container">
         <h1 ng-bind="gamular.name"></h1>
         <section ng-include="'partials/map.html'" ng-if="player && monster" class="map"></section>
-        <section ng-include="'partials/controls.html'" ng-if="player" class="controls">
-        </section>
+        <section ng-include="'partials/controls.html'" ng-if="player" class="controls"></section>
+        <section ng-include="'partials/debug.html'" ng-if="player" class="debug"></section>
       </div>
     </div>
 
